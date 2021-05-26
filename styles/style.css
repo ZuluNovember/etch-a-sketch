@@ -50,7 +50,19 @@ button{
 }
 
 .grid-container{
+
+    --sq:min(100vh*3/4, 100vw*3/5);
     grid-area: 2/3/5/6;
+    display:flex;
+    align-items: center;
+}
+.container{
+    background-color: white;
+    width: calc(var(--sq) - 20px);
+    height: calc(var(--sq) - 20px);
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .slider{
@@ -59,7 +71,7 @@ button{
     height: 15px;
     background-color: #E8F3F1;
     border-radius: 7px;
-    transition: .3s;
+    transition: .1s;
 }
 
 #number-input{
@@ -69,10 +81,17 @@ button{
     border-radius: 7px;
     width: min-content;
     width: 30px;
+    height: 15px;
     color: #dd8aa7;
     font-weight: 800;
     text-align: center;
     margin: 0 5px;
+    transition: 0.1s;
+}
+
+#number-input:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 #number-input::-webkit-inner-spin-button{
@@ -81,8 +100,8 @@ button{
 
 .slider::-webkit-slider-thumb{
     -webkit-appearance: none;
-    height: 25px;
-    width: 25px;
+    height: 12px;
+    width: 12px;
     background: #D3A6B6;
     border-radius: 50%;
 }
@@ -92,3 +111,16 @@ button{
 }
 
 
+@media (max-width:500px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main > *{
+        margin-top: 50px;
+        
+    }
+    
+}
